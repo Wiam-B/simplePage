@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Base Apparel coming soon page</title>
   <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
-  <!-- Logo always at top for mobile -->
 
   <div class="container">
     <img src="./images/logo.svg" alt="Base Apparel logo" class="logo" />
@@ -32,23 +33,23 @@
 
     <div class="right">
       <img src="./images/hero-desktop.jpg" alt="hero image" />
-      
+
     </div>
   </div>
 
 </body>
-</html> 
+
+</html>
 <script>
   const form = document.querySelector(".email-form");
   const input = form.querySelector("input");
   const arrow = form.querySelector("img");
 
-  // Create error image and message (only once)
   const errorIcon = document.createElement("img");
   errorIcon.src = "./images/icon-error.svg";
   errorIcon.alt = "Error icon";
   errorIcon.style.width = "20px";
-  errorIcon.style.background = "none";  // Empêche le fond d'être appliqué à l'icône d'erreur
+  errorIcon.style.background = "none";
 
   errorIcon.classList.add("error-icon");
 
@@ -64,7 +65,7 @@
     const email = input.value.trim();
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-   
+
     if (!isValidEmail) {
       form.style.border = "2px solid hsl(0, 93%, 68%)";
       form.insertBefore(errorIcon, arrow);
