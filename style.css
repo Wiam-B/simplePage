@@ -35,6 +35,7 @@ body {
 .description-text {
   font-weight: 600;
   margin: 20px 0;
+  line-height: 1.8;
 }
 
 .logo {
@@ -55,8 +56,13 @@ body {
   flex-direction: column;
   justify-content: center;
   margin-top: 95px; 
+  font-size: 16px;
+
 }
 
+.left h1{
+    font-size: 35px;
+}
 .right {
   flex: 1;
 }
@@ -69,7 +75,7 @@ body {
 
 .email-form {
   display: flex;
-  margin-top: 20px;
+  margin-top: 12px;
   border: 1px solid hsl(0, 36%, 70%);
   border-radius: 25px;
   overflow: hidden;
@@ -77,9 +83,8 @@ body {
 
 .email-form input {
   flex: 1;
-  padding: 12px 20px;
+  padding: 12px 15px;
   border: none;
-  outline: none;
   font-family: inherit;
   font-size: 16px;
   color: hsl(0, 6%, 24%);
@@ -132,11 +137,41 @@ body {
     text-align: center;
   }
   .right {
+
     order: 1;
   }
 
   .logo {
-    margin: 20px;
+    margin: 45px;
     position: static;
+
+  }
+
+  .email-form {
+    display: flex;
+    margin-top: 7px;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 25px;
+    overflow: hidden;
+  }
+  
+  .email-form input {
+    flex: 1;
+    padding: 2px 15px;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: hsl(0, 6%, 24%);
+  }
+  
+  .email-form img {
+    background-color: hsl(0, 36%, 70%);
+    color: white;
+    border-radius: 20px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 18px;
   }
 }
+
+

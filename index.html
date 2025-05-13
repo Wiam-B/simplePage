@@ -26,13 +26,51 @@
       <form class="email-form ">
         <input type="email" placeholder="Email Address" required />
         <img src="./images/icon-arrow.svg" alt="arrow icon" class="arrow-icon">
+
       </form>
     </div>
 
     <div class="right">
       <img src="./images/hero-desktop.jpg" alt="hero image" />
+      
     </div>
   </div>
 
 </body>
 </html> 
+<script>
+  const form = document.querySelector(".email-form");
+  const input = form.querySelector("input");
+  const arrow = form.querySelector("img");
+
+  // Create error image and message (only once)
+  const errorIcon = document.createElement("img");
+  errorIcon.src = "./images/icon-error.svg";
+  errorIcon.alt = "Error icon";
+  errorIcon.style.width = "20px";
+  errorIcon.style.background = "none";  // Empêche le fond d'être appliqué à l'icône d'erreur
+
+  errorIcon.classList.add("error-icon");
+
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent = "Please provide a valid email";
+  errorMessage.style.color = "hsl(0, 93%, 68%)";
+  errorMessage.style.marginTop = "8px";
+  errorMessage.style.fontSize = "14px";
+  errorMessage.classList.add("error-message");
+
+  arrow.addEventListener("click", function (e) {
+    e.preventDefault(); // prevent actual form submission
+    const email = input.value.trim();
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+   
+    if (!isValidEmail) {
+      form.style.border = "2px solid hsl(0, 93%, 68%)";
+      form.insertBefore(errorIcon, arrow);
+      form.parentElement.appendChild(errorMessage);
+    } else {
+      input.value = "";
+    }
+  });
+</script>
